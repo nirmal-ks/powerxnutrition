@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { siteConfig } from "@/config/site";
 import { inr2 } from "@/lib/money";
+import { WhatsAppIcon } from "../../ui/Icons";
 import type { DashboardData } from "@/lib/server/dashboard";
 import { useActor, useCan } from "../SessionContext";
 import { Alert, Card, Empty, fmtDay, Freshness, istToday, PeriodFilter, Stat, useApi } from "../ui";
@@ -63,6 +65,7 @@ export function Dashboard() {
         </div>
       </div>
       <PeriodFilter {...p} onChange={setP} />
+      {data && !data.limited && <WhatsAppReport d={data} label={label} channel={p.channel} fin={fin} />}
       {error && !data && <Alert>{error}</Alert>}
       {!data ? (
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">{Array.from({ length: 8 }, (_, i) => <div key={i} className="h-24 animate-pulse rounded-2xl bg-white/5" />)}</div>
@@ -164,6 +167,43 @@ export function Dashboard() {
           </div>
         </>
       )}
+    </div>
+  );
+}
+
+/** Sales summary as a WhatsApp message (free wa.me link) — e.g. owner's end-of-day report. */
+function WhatsAppReport({ d, label, channel, fin }: { d: Extract<DashboardData, { limited: false }>; label: string; channel: string; fin: boolean }) {
+  const s = d.summary;
+  const lines = [
+    `📊 *${siteConfig.name} — ${label}*${channel ? ` (${channel === "ONLINE" ? "online only" : "shop only"})` : ""}`,
+    ``,
+    `🛒 Shop: ${inr2(s.offlineTotal)} (${s.offlineBills} bill${s.offlineBills === 1 ? "" : "s"})`,
+    `🌐 Online: ${inr2(s.onlineTotal)} (${s.onlineBills} order${s.onlineBills === 1 ? "" : "s"})`,
+    `*Total billed: ${inr2(s.billedTotal)}*`,
+    s.returns.count ? `↩ Returns: ${s.returns.count} (−${inr2(s.returns.value)})` : null,
+    `Net sales (excl. GST): ${inr2(s.netSales)}`,
+    fin && s.grossProfit !== null ? `Gross profit: ${inr2(s.grossProfit)} (${s.grossMarginPct}%)` : null,
+    fin && s.expenses !== null ? `Expenses: ${inr2(s.expenses)}` : null,
+    fin && s.estimatedOperatingProfit !== null ? `*Est. profit: ${inr2(s.estimatedOperatingProfit)}*` : null,
+    ``,
+    d.collections.length ? `💰 Collected: ${d.collections.map((c) => `${METHOD[c.method] ?? c.method} ${inr2(c.net)}`).join(" · ")}` : null,
+    d.topProducts.length ? `🔥 Top: ${d.topProducts.slice(0, 3).map((t) => `${t.product_name} (${t.variant_label}) ×${t.qty - t.returned}`).join(", ")}` : null,
+    d.lowStock.length ? `⚠ Low stock: ${d.lowStock.slice(0, 6).map((l) => `${l.name} ${l.label} (${l.stock})`).join(", ")}` : null,
+    d.pending.new_orders || d.pending.upi_verify ? `📦 Pending: ${d.pending.new_orders} new order(s), ${d.pending.upi_verify} UPI to verify` : null,
+  ];
+  const text = lines
+    .filter((l): l is string => l !== null)
+    .join("\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+  return (
+    <div className="flex flex-wrap items-center gap-2">
+      <a href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(text)}`} target="_blank" rel="noopener" className="btn btn-whatsapp px-4! py-2! text-xs!">
+        <WhatsAppIcon size={16} /> Send this report to shop WhatsApp
+      </a>
+      <a href={`https://wa.me/?text=${encodeURIComponent(text)}`} target="_blank" rel="noopener" className="text-xs font-bold text-smoke underline">
+        …or choose another chat
+      </a>
     </div>
   );
 }

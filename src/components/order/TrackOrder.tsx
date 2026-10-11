@@ -29,6 +29,7 @@ export function TrackOrder() {
   const [id, setId] = useState(params.get("id") ?? "");
   const [phone, setPhone] = useState("");
   const [order, setOrder] = useState<PublicOrder | null>(null);
+  const [billPdfUrl, setBillPdfUrl] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [mine, setMine] = useState<Order[]>([]);
@@ -42,9 +43,10 @@ export function TrackOrder() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: orderId.trim().toUpperCase(), phone: mobile }),
       });
-      const data = (await res.json()) as { order?: PublicOrder; error?: string };
+      const data = (await res.json()) as { order?: PublicOrder; billPdfUrl?: string | null; error?: string };
       if (!res.ok || !data.order) throw new Error(data.error || "Could not find the order");
       setOrder(data.order);
+      setBillPdfUrl(data.billPdfUrl ?? null);
       const local = loadLocalOrder(data.order.id);
       if (local) saveLocalOrder({ ...local, ...data.order });
     } catch (e) {
@@ -123,7 +125,7 @@ export function TrackOrder() {
         )}
       </div>
 
-      <div>{order ? <OrderStatusCard order={order} /> : <EmptyState />}</div>
+      <div>{order ? <OrderStatusCard order={order} billPdfUrl={billPdfUrl} /> : <EmptyState />}</div>
     </div>
   );
 }
@@ -143,7 +145,7 @@ function EmptyState() {
   );
 }
 
-function OrderStatusCard({ order }: { order: PublicOrder }) {
+function OrderStatusCard({ order, billPdfUrl }: { order: PublicOrder; billPdfUrl: string | null }) {
   const cancelled = order.status === "cancelled";
   const reached = STEPS.findIndex((s) => s.status === order.status);
   const pay = PAYMENT_TEXT[order.paymentStatus];
@@ -156,6 +158,11 @@ function OrderStatusCard({ order }: { order: PublicOrder }) {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-smoke">Order</p>
           <p className="font-display text-3xl tracking-wider">{order.id}</p>
           <p className="text-xs text-smoke">Placed {formatDate(order.createdAt)}</p>
+          {billPdfUrl && (
+            <a href={billPdfUrl} target="_blank" rel="noopener" className="btn btn-gold mt-3 px-4! py-2! text-xs!">
+              ⬇ Download bill (PDF){order.billNo ? ` · ${order.billNo}` : ""}
+            </a>
+          )}
         </div>
         <div className="text-right">
           <p className="font-display text-3xl text-gold">{inr(order.total)}</p>

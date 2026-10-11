@@ -1,6 +1,6 @@
 import { errorResponse, json } from "@/lib/api";
 import { getDb } from "@/lib/db";
-import { findCustomerOrder, publicOrder } from "@/lib/orders";
+import { findCustomerOrder, orderBillPdfUrl, publicOrder } from "@/lib/orders";
 import { submitUtr } from "@/lib/server/orders";
 
 /** Customer's confirmation page polls this to see when the shop has verified the payment. */
@@ -9,7 +9,7 @@ export async function GET(req: Request, ctx: { params: Promise<{ id: string }> }
     const { id } = await ctx.params;
     const order = await findCustomerOrder(id, new URL(req.url).searchParams.get("phone"));
     if (!order) return json({ error: "Order not found" }, 404);
-    return json({ order: publicOrder(order) });
+    return json({ order: publicOrder(order), billPdfUrl: await orderBillPdfUrl(order.id) });
   } catch (e) {
     return errorResponse(e);
   }

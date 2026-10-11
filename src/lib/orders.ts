@@ -2,6 +2,7 @@ import "server-only";
 import { siteConfig } from "@/config/site";
 import { getDb } from "@/lib/db";
 import { razorpayEnabled } from "@/lib/server/razorpay";
+import { receiptPdfUrl } from "@/lib/server/receipt-link";
 import { createOrder, getOrder, type PlaceOrderInput } from "@/lib/server/orders";
 import type { Order, PublicOrder } from "@/types";
 import { distanceFromShopKm, isLatLng, withinCodRadius } from "./geo";
@@ -29,6 +30,16 @@ export async function placeOrder(input: PlaceOrderInput): Promise<{ order: Order
   const db = await getDb();
   const { order, duplicate } = await createOrder(db, input, { location, razorpayEnabled: razorpayEnabled() });
   return { order, persisted: true, duplicate };
+}
+
+/**
+ * Signed link to the order's bill PDF, once the sale is recorded (stock stage reached).
+ * Null while the order isn't billed yet or if it was cancelled.
+ */
+export async function orderBillPdfUrl(orderId: string): Promise<string | null> {
+  const db = await getDb();
+  const r = await db.query<{ id: string }>("select id from sales where order_id = $1 and status <> 'cancelled' limit 1", [orderId]);
+  return r[0] ? receiptPdfUrl(r[0].id) : null;
 }
 
 /** Strips shop-only fields before an order is sent to the customer's browser. */

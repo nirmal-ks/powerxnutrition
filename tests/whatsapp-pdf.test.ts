@@ -54,3 +54,20 @@ describe("bill PDF + WhatsApp", () => {
     await expect(sendBillPdf({ to: "9876543210", pdfUrl: "http://localhost:3000/r/x/pdf", fileName: "a.pdf", customerName: "", billNo: "1", amount: "1" })).rejects.toThrow(/public https/);
   });
 });
+
+describe("send bill on WhatsApp (free mode)", () => {
+  it("POS bill: builds a wa.me link to +91 number with the PDF link and saves the number on the bill", async () => {
+    const { sendSaleBillOnWhatsApp } = await import("@/lib/server/bill-whatsapp");
+    const vid = await variantId(db, "mb-creatine", "250-g");
+    const { sale } = await createPosSale(db, CASHIER, { clientTxnId: txnId(), items: [{ variantId: vid, qty: 1 }], payments: [{ method: "cash", amount: 799 }] });
+    expect(sale.customer_phone).toBe("");
+    const r = await sendSaleBillOnWhatsApp(db, CASHIER, sale.id, "+91 98765 43211");
+    expect(r.sent).toBe(false);
+    expect(r.waUrl).toMatch(/^https:\/\/wa\.me\/919876543211\?text=/);
+    expect(decodeURIComponent(r.waUrl)).toContain(`/r/${sale.id}/pdf?t=`);
+    expect(decodeURIComponent(r.waUrl)).toContain(sale.bill_no);
+    const saved = await db.query<{ customer_phone: string }>("select customer_phone from sales where id = $1", [sale.id]);
+    expect(saved[0].customer_phone).toBe("9876543211");
+    await expect(sendSaleBillOnWhatsApp(db, CASHIER, sale.id, "12345")).rejects.toThrow(/valid 10-digit/);
+  });
+});

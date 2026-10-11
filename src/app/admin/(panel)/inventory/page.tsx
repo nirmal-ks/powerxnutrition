@@ -18,7 +18,7 @@ export default async function InventoryPage() {
   ]);
   return (
     <Suspense>
-      <InventoryView brands={brands.map((b) => b.brand)} categories={categories.map((c) => ({ slug: c.slug, name: c.name }))} suppliers={suppliers.map((s) => ({ id: s.id, name: s.name }))} />
+      <InventoryView brands={brands.map((b) => b.brand)} categories={categories.map((c) => ({ slug: c.slug, name: c.name }))} suppliers={suppliers.map((s) => ({ id: s.id, name: s.name, phone: s.phone }))} />
     </Suspense>
   );
 }

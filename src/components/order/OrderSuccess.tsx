@@ -17,6 +17,7 @@ export function OrderSuccess() {
   const id = useSearchParams().get("id") ?? "";
   const [order, setOrder] = useState<Order | null | undefined>(undefined);
   const [copied, setCopied] = useState(false);
+  const [billPdfUrl, setBillPdfUrl] = useState<string | null>(null);
 
   useEffect(() => setOrder(id ? loadLocalOrder(id) : null), [id]);
 
@@ -27,6 +28,14 @@ export function OrderSuccess() {
     (order.paymentStatus === "unpaid" || order.paymentStatus === "verifying");
   const prepaid = order?.paymentMethod === "upi" || order?.paymentMethod === "razorpay";
   const phone = order?.customer.phone;
+  // Bill PDF link (available once the shop has recorded the sale)
+  useEffect(() => {
+    if (!id || !phone) return;
+    fetch(`/api/orders/${encodeURIComponent(id)}/payment?phone=${phone}`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => d?.billPdfUrl && setBillPdfUrl(d.billPdfUrl))
+      .catch(() => undefined);
+  }, [id, phone, order?.paymentStatus, order?.status]);
   useEffect(() => {
     if (!awaitingPayment || !phone) return;
     let stop = false;
@@ -197,7 +206,12 @@ export function OrderSuccess() {
 
         {/* Summary */}
         <section className="rounded-3xl border border-white/10 bg-gradient-to-b from-steel to-coal p-6">
-          <h2 className="font-display text-2xl">Order summary</h2>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h2 className="font-display text-2xl">Order summary</h2>
+            {billPdfUrl && (
+              <a href={billPdfUrl} target="_blank" rel="noopener" className="btn btn-gold px-3! py-1.5! text-xs!">⬇ Bill (PDF)</a>
+            )}
+          </div>
           <ul className="mt-4 space-y-2 text-sm">
             {order.items.map((i) => (
               <li key={i.slug + i.variantId} className="flex justify-between gap-3">

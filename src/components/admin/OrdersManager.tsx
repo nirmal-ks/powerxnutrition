@@ -9,6 +9,7 @@ import { whatsappLink } from "@/lib/whatsapp";
 import type { Order, OrderStatus, PaymentStatus } from "@/types";
 import { PhoneIcon, SearchIcon, WhatsAppIcon } from "../ui/Icons";
 import { PaymentBadge, StatusBadge } from "./badges";
+import { OrderWhatsAppTools } from "./OrderWhatsAppTools";
 
 const STATUSES: OrderStatus[] = ["new", "confirmed", "shipped", "delivered", "cancelled"];
 const PAYMENTS: PaymentStatus[] = ["unpaid", "verifying", "paid", "refunded"];
@@ -218,6 +219,7 @@ export function OrdersManager({ orders: initial }: { orders: Order[] }) {
                         Recorded as bill <a href={`/admin/sales/${encodeURIComponent(o.billNo)}`} className="font-bold text-gold underline">{o.billNo}</a> (stock deducted)
                       </p>
                     )}
+                    <OrderWhatsAppTools order={o} />
                     {o.paymentMethod === "razorpay" && (
                       <p className="text-xs text-smoke">Razorpay payment: {o.paymentStatus === "paid" ? "verified by the gateway ✔" : "not verified yet — never mark it paid by hand"}</p>
                     )}

@@ -23,13 +23,14 @@ const MOVE_LABEL: Record<string, { label: string; tone: "green" | "red" | "gold"
 
 type Valuation = { units: number; cost_value: number; retail_value: number; no_cost_units: number; low: number; out: number; skus: number };
 
-export function InventoryView({ brands, categories, suppliers }: { brands: string[]; categories: { slug: string; name: string }[]; suppliers: { id: string; name: string }[] }) {
+export function InventoryView({ brands, categories, suppliers }: { brands: string[]; categories: { slug: string; name: string }[]; suppliers: { id: string; name: string; phone?: string }[] }) {
   const sp = useSearchParams();
   const can = useCan();
   const [tab, setTab] = useState<"stock" | "movements" | "batches">((sp.get("tab") as "stock") ?? "stock");
   const [f, setF] = useState({ q: "", brand: "", category: "", supplier: "", low: sp.get("low") === "1", expiring: "" });
   const [adjust, setAdjust] = useState<InventoryRow | null>(null);
   const [historyFor, setHistoryFor] = useState<InventoryRow | null>(null);
+  const [reorder, setReorder] = useState(false);
 
   const stockUrl = useMemo(() => {
     const p = new URLSearchParams();
@@ -97,7 +98,12 @@ export function InventoryView({ brands, categories, suppliers }: { brands: strin
           </div>
           <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
             <Freshness at={stock.updatedAt} error={stock.error} onRefresh={stock.reload} />
-            <a href={`${stockUrl}&format=csv`} className="text-xs font-bold text-gold">⬇ Export CSV</a>
+            <span className="flex items-center gap-3">
+              {can("purchases.create") && (
+                <button onClick={() => setReorder(true)} className="text-xs font-bold text-[#25d366]">📲 Reorder low stock on WhatsApp</button>
+              )}
+              <a href={`${stockUrl}&format=csv`} className="text-xs font-bold text-gold">⬇ Export CSV</a>
+            </span>
           </div>
           {stock.loading && !stock.data && <p className="p-6 text-center text-smoke"><Spinner /></p>}
           {stock.data && !stock.data.items.length && <Empty>No products match.</Empty>}
@@ -146,6 +152,7 @@ export function InventoryView({ brands, categories, suppliers }: { brands: strin
       {tab === "batches" && <Batches />}
       {adjust && <AdjustDialog row={adjust} onClose={() => setAdjust(null)} onDone={() => { setAdjust(null); stock.reload(); }} />}
       {historyFor && <HistoryDialog row={historyFor} onClose={() => setHistoryFor(null)} />}
+      {reorder && <ReorderDialog suppliers={suppliers} onClose={() => setReorder(false)} />}
     </div>
   );
 }
@@ -294,3 +301,54 @@ function HistoryDialog({ row, onClose }: { row: InventoryRow; onClose: () => voi
   );
 }
 
+
+/** Low-stock items grouped by supplier → one prefilled WhatsApp order per supplier (free wa.me link). */
+function ReorderDialog({ suppliers, onClose }: { suppliers: { id: string; name: string; phone?: string }[]; onClose: () => void }) {
+  const { data, error } = useApi<{ items: InventoryRow[] }>("/api/admin/inventory?low=1");
+  const [qty, setQty] = useState<Record<string, number>>({});
+  const suggest = (r: InventoryRow) => qty[r.variant_id] ?? Math.max(1, r.min_stock * 2 - Math.max(0, r.stock));
+  const groups = new Map<string, InventoryRow[]>();
+  for (const r of data?.items ?? []) {
+    const k = r.supplier_id ?? "";
+    groups.set(k, [...(groups.get(k) ?? []), r]);
+  }
+  const message = (sup: string, rows: InventoryRow[]) =>
+    [
+      `Hi ${sup || ""}, this is PowerX Nutrition (Veppampattu). Please send the following:`,
+      "",
+      ...rows.map((r, i) => `${i + 1}. ${r.brand} ${r.name} – ${[r.label, r.flavour].filter(Boolean).join(", ")}${r.sku ? ` (${r.sku})` : ""} × ${suggest(r)}`),
+      "",
+      "Please confirm availability, rates and delivery date. Thank you!",
+    ].join("\n");
+  return (
+    <Modal title="Reorder low stock on WhatsApp" onClose={onClose} wide>
+      {error && <Alert>{error}</Alert>}
+      {!data && <p className="p-4 text-center"><Spinner /></p>}
+      {data && !data.items.length && <Empty>Nothing is low on stock 🎉</Empty>}
+      <div className="space-y-4">
+        {[...groups.entries()].map(([sid, rows]) => {
+          const sup = suppliers.find((s) => s.id === sid);
+          const phone = (sup?.phone ?? "").replace(/\D/g, "").slice(-10);
+          const text = message(sup?.name ?? "", rows);
+          return (
+            <div key={sid || "none"} className="rounded-2xl border border-white/10 p-3">
+              <p className="mb-2 font-semibold">{sup?.name ?? "No supplier set"} {phone && <span className="text-xs text-smoke">· {phone}</span>}</p>
+              <ul className="mb-3 space-y-1 text-sm">
+                {rows.map((r) => (
+                  <li key={r.variant_id} className="flex items-center justify-between gap-2">
+                    <span className="min-w-0 truncate">{r.name} <span className="text-smoke">({[r.label, r.flavour].filter(Boolean).join(", ")}) · stock {r.stock}</span></span>
+                    <input type="number" min={1} value={suggest(r)} onChange={(e) => setQty({ ...qty, [r.variant_id]: Math.max(1, Number(e.target.value) || 1) })} className="input w-20! py-1!" aria-label="Quantity to order" />
+                  </li>
+                ))}
+              </ul>
+              <a href={`https://wa.me/${phone.length === 10 ? `91${phone}` : ""}?text=${encodeURIComponent(text)}`} target="_blank" rel="noopener" className="btn btn-whatsapp w-full py-2.5! text-xs!">
+                📲 {phone.length === 10 ? `Send order to ${sup?.name}` : "Open WhatsApp (choose the supplier chat)"}
+              </a>
+            </div>
+          );
+        })}
+      </div>
+      <p className="mt-3 text-xs text-smoke">Set each product's main supplier (Products → Edit) and the supplier's phone (Suppliers) to send straight to the right chat. When the goods arrive, use Receive stock.</p>
+    </Modal>
+  );
+}
