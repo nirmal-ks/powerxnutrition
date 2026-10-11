@@ -30,3 +30,6 @@ data/catalog-snapshot.json
 /image*.png
 /{*}.png
 /Screenshot*.png
+
+.vercel
+.env*
