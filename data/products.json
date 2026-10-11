@@ -1,0 +1,1620 @@
+[
+  {
+    "slug": "maxn-100-whey",
+    "name": "MAXN 100% Whey Protein",
+    "brand": "MAXN",
+    "category": "whey-protein",
+    "description": "MAXN 100% Whey Protein by MAXN is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/maxn-100-whey.jpg",
+    "variants": [
+      {
+        "id": "1-kg",
+        "label": "1 kg",
+        "price": 3500,
+        "mrp": 4199,
+        "stock": 1
+      },
+      {
+        "id": "1-81-kg-4-lb",
+        "label": "1.81 kg (4 lb)",
+        "price": 6000,
+        "mrp": 7199,
+        "stock": 1
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 0
+  },
+  {
+    "slug": "maxn-casein",
+    "name": "MAXN Casein Protein",
+    "brand": "MAXN",
+    "category": "whey-protein",
+    "description": "Slow-digesting casein protein, ideal before bed to feed muscles through the night. MAXN Casein Protein by MAXN is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/maxn-casein.png",
+    "variants": [
+      {
+        "id": "2-27-kg-5-lb",
+        "label": "2.27 kg (5 lb)",
+        "price": 5200,
+        "mrp": 6249,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 1
+  },
+  {
+    "slug": "gnc-whey-protein",
+    "name": "GNC Pro Performance 100% Whey",
+    "brand": "GNC",
+    "category": "whey-protein",
+    "description": "GNC Pro Performance 100% Whey by GNC is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/gnc-whey-protein.jpg",
+    "variants": [
+      {
+        "id": "1-81-kg-4-lb",
+        "label": "1.81 kg (4 lb)",
+        "price": 6500,
+        "mrp": 7799,
+        "stock": 3
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 2
+  },
+  {
+    "slug": "avatar-whey-protein",
+    "name": "Avvatar Whey Protein",
+    "brand": "Avvatar",
+    "category": "whey-protein",
+    "description": "Avvatar Whey Protein by Avvatar is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/avatar-whey-protein.jpg",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 6900,
+        "mrp": 8299,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 3
+  },
+  {
+    "slug": "labrada-100-whey",
+    "name": "Labrada 100% Whey Protein",
+    "brand": "Labrada",
+    "category": "whey-protein",
+    "description": "Labrada 100% Whey Protein by Labrada is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/labrada-100-whey.jpg",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 5500,
+        "mrp": 6599,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 4
+  },
+  {
+    "slug": "labrada-turbo-whey",
+    "name": "Labrada Turbo Whey",
+    "brand": "Labrada",
+    "category": "whey-protein",
+    "description": "Labrada Turbo Whey by Labrada is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/labrada-turbo-whey.jpg",
+    "variants": [
+      {
+        "id": "1-81-kg-4-lb",
+        "label": "1.81 kg (4 lb)",
+        "price": 6000,
+        "mrp": 7199,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 5
+  },
+  {
+    "slug": "on-gold-standard-whey",
+    "name": "ON Gold Standard 100% Whey",
+    "brand": "Optimum Nutrition",
+    "category": "whey-protein",
+    "description": "ON Gold Standard 100% Whey by Optimum Nutrition is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/on-gold-standard-whey.jpg",
+    "variants": [
+      {
+        "id": "1-76-kg-4-lb",
+        "label": "1.76 kg (4 lb)",
+        "price": 7800,
+        "mrp": 9399,
+        "stock": 1
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 6
+  },
+  {
+    "slug": "on-performance-whey",
+    "name": "ON Performance Whey",
+    "brand": "Optimum Nutrition",
+    "category": "whey-protein",
+    "description": "ON Performance Whey by Optimum Nutrition is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/on-performance-whey.jpg",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 6000,
+        "mrp": 7199,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 7
+  },
+  {
+    "slug": "muscletech-nitrotech-ripped",
+    "name": "MuscleTech NitroTech Ripped",
+    "brand": "MuscleTech",
+    "category": "whey-protein",
+    "description": "Whey protein formulated for lean muscle building while cutting. MuscleTech NitroTech Ripped by MuscleTech is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/muscletech-nitrotech-ripped.jpg",
+    "variants": [
+      {
+        "id": "1-8-kg",
+        "label": "1.8 kg",
+        "price": 8000,
+        "mrp": 9599,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 8
+  },
+  {
+    "slug": "muscletech-nitrotech-whey",
+    "name": "MuscleTech NitroTech Whey Protein",
+    "brand": "MuscleTech",
+    "category": "whey-protein",
+    "description": "MuscleTech NitroTech Whey Protein by MuscleTech is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/muscletech-nitrotech-whey.jpg",
+    "variants": [
+      {
+        "id": "1-8-kg",
+        "label": "1.8 kg",
+        "price": 6900,
+        "mrp": 8299,
+        "stock": 1
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 9
+  },
+  {
+    "slug": "muscletech-nitrotech-advance",
+    "name": "MuscleTech NitroTech Advance",
+    "brand": "MuscleTech",
+    "category": "whey-protein",
+    "description": "MuscleTech NitroTech Advance by MuscleTech is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/muscletech-nitrotech-advance.jpg",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 4500,
+        "mrp": 5399,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 10
+  },
+  {
+    "slug": "muscleblaze-whey-protein",
+    "name": "MuscleBlaze Whey Protein",
+    "brand": "MuscleBlaze",
+    "category": "whey-protein",
+    "description": "MuscleBlaze Whey Protein by MuscleBlaze is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/muscleblaze-whey-protein.jpg",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 6800,
+        "mrp": 8199,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 11
+  },
+  {
+    "slug": "pure-nation-whey",
+    "name": "Pure Nation Whey Protein",
+    "brand": "Pure Nation",
+    "category": "whey-protein",
+    "description": "Pure Nation Whey Protein by Pure Nation is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 3800,
+        "mrp": 4599,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 12
+  },
+  {
+    "slug": "musclemeds-carnivor",
+    "name": "MuscleMeds Carnivor Beef Protein",
+    "brand": "MuscleMeds",
+    "category": "whey-protein",
+    "description": "Beef protein isolate — a dairy-free protein option for muscle building. MuscleMeds Carnivor Beef Protein by MuscleMeds is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/musclemeds-carnivor.png",
+    "variants": [
+      {
+        "id": "1-81-kg-4-lb",
+        "label": "1.81 kg (4 lb)",
+        "price": 6200,
+        "mrp": 7449,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 13
+  },
+  {
+    "slug": "apex-whey",
+    "name": "Apex Whey Protein",
+    "brand": "Apex",
+    "category": "whey-protein",
+    "description": "Apex Whey Protein by Apex is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/apex-whey.jpg",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 4500,
+        "mrp": 5399,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 14
+  },
+  {
+    "slug": "apex-iso",
+    "name": "Apex ISO Whey Isolate",
+    "brand": "Apex",
+    "category": "whey-protein",
+    "description": "Apex ISO Whey Isolate by Apex is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/apex-iso.webp",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 6200,
+        "mrp": 7449,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 15
+  },
+  {
+    "slug": "carnivor-iso-gold",
+    "name": "Carnivor ISO Gold",
+    "brand": "MuscleMeds",
+    "category": "whey-protein",
+    "description": "Carnivor ISO Gold by MuscleMeds is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 4000,
+        "mrp": 4799,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 16
+  },
+  {
+    "slug": "c9-100-whey",
+    "name": "C9 100% Whey Protein",
+    "brand": "Cloud 9",
+    "category": "whey-protein",
+    "description": "C9 100% Whey Protein by Cloud 9 is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/c9-100-whey.jpg",
+    "variants": [
+      {
+        "id": "1-kg",
+        "label": "1 kg",
+        "price": 2500,
+        "mrp": 2999,
+        "stock": 4
+      },
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 4400,
+        "mrp": 5299,
+        "stock": 6
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 17
+  },
+  {
+    "slug": "c9-iso-zero",
+    "name": "C9 ISO Zero Whey Isolate",
+    "brand": "Cloud 9",
+    "category": "whey-protein",
+    "description": "C9 ISO Zero Whey Isolate by Cloud 9 is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/c9-iso-zero.jpg",
+    "variants": [
+      {
+        "id": "1-kg",
+        "label": "1 kg",
+        "price": 2700,
+        "mrp": 3249,
+        "stock": 4
+      },
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 4900,
+        "mrp": 5899,
+        "stock": 4
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 18
+  },
+  {
+    "slug": "kevin-levrone-anabolic-whey",
+    "name": "Kevin Levrone Anabolic Whey",
+    "brand": "Kevin Levrone",
+    "category": "whey-protein",
+    "description": "Kevin Levrone Anabolic Whey by Kevin Levrone is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/kevin-levrone-anabolic-whey.jpg",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 5000,
+        "mrp": 5999,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 19
+  },
+  {
+    "slug": "gibbon-my-whey",
+    "name": "Gibbon My Whey",
+    "brand": "Gibbon",
+    "category": "whey-protein",
+    "description": "Gibbon My Whey by Gibbon is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/gibbon-my-whey.jpg",
+    "variants": [
+      {
+        "id": "1-kg",
+        "label": "1 kg",
+        "price": 2200,
+        "mrp": 2649,
+        "stock": 5
+      },
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 4000,
+        "mrp": 4799,
+        "stock": 5
+      },
+      {
+        "id": "4-5-kg",
+        "label": "4.5 kg",
+        "price": 8000,
+        "mrp": 9599,
+        "stock": 2
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 20
+  },
+  {
+    "slug": "anabolic-research-tri-whey",
+    "name": "Anabolic Research Tri Whey",
+    "brand": "Anabolic Research",
+    "category": "whey-protein",
+    "description": "Anabolic Research Tri Whey by Anabolic Research is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/anabolic-research-tri-whey.png",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 3500,
+        "mrp": 4199,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 21
+  },
+  {
+    "slug": "klr-nitrofit",
+    "name": "KLR Nitrofit Whey",
+    "brand": "KLR Nutrition",
+    "category": "whey-protein",
+    "description": "KLR Nitrofit Whey by KLR Nutrition is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/klr-nitrofit.webp",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 3500,
+        "mrp": 4199,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 22
+  },
+  {
+    "slug": "klr-hydrofit",
+    "name": "KLR Hydrofit Whey",
+    "brand": "KLR Nutrition",
+    "category": "whey-protein",
+    "description": "KLR Hydrofit Whey by KLR Nutrition is a high-quality protein powder that helps you build lean muscle and recover faster after training. Mixes easily with water or milk — perfect as a post-workout shake or to top up your daily protein intake.",
+    "image": "/products/klr-hydrofit.webp",
+    "variants": [
+      {
+        "id": "2-kg",
+        "label": "2 kg",
+        "price": 4200,
+        "mrp": 5049,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 23
+  },
+  {
+    "slug": "gnc-mass-gainer",
+    "name": "GNC Pro Performance Weight Gainer",
+    "brand": "GNC",
+    "category": "mass-gainer",
+    "description": "GNC Pro Performance Weight Gainer by GNC packs extra calories, carbohydrates and protein to help hard-gainers put on healthy weight and size. Take it between meals or after training to support your bulking goals.",
+    "image": "/products/gnc-mass-gainer.jpg",
+    "variants": [
+      {
+        "id": "5-kg",
+        "label": "5 kg",
+        "price": 3100,
+        "mrp": 3749,
+        "stock": 1
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 24
+  },
+  {
+    "slug": "american-muscle-mass-gainer",
+    "name": "Americanz Muscles Anabolic Mass Gainer",
+    "brand": "Americanz Muscles",
+    "category": "mass-gainer",
+    "description": "Americanz Muscles Anabolic Mass Gainer by Americanz Muscles packs extra calories, carbohydrates and protein to help hard-gainers put on healthy weight and size. Take it between meals or after training to support your bulking goals.",
+    "image": "/products/american-muscle-mass-gainer.jpg",
+    "variants": [
+      {
+        "id": "5-44-kg-12-lb",
+        "label": "5.44 kg (12 lb)",
+        "price": 4300,
+        "mrp": 5199,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 25
+  },
+  {
+    "slug": "maxn-mass-gainer",
+    "name": "MAXN Mass Gainer",
+    "brand": "MAXN",
+    "category": "mass-gainer",
+    "description": "MAXN Mass Gainer by MAXN packs extra calories, carbohydrates and protein to help hard-gainers put on healthy weight and size. Take it between meals or after training to support your bulking goals.",
+    "image": "/products/maxn-mass-gainer.png",
+    "variants": [
+      {
+        "id": "1-5-kg",
+        "label": "1.5 kg",
+        "price": 1000,
+        "mrp": 1199,
+        "stock": 4
+      },
+      {
+        "id": "3-kg",
+        "label": "3 kg",
+        "price": 1800,
+        "mrp": 2199,
+        "stock": 4
+      },
+      {
+        "id": "5-kg",
+        "label": "5 kg",
+        "price": 2900,
+        "mrp": 3499,
+        "stock": 1
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 26
+  },
+  {
+    "slug": "labrada-muscle-mass-gainer",
+    "name": "Labrada Muscle Mass Gainer",
+    "brand": "Labrada",
+    "category": "mass-gainer",
+    "description": "Labrada Muscle Mass Gainer by Labrada packs extra calories, carbohydrates and protein to help hard-gainers put on healthy weight and size. Take it between meals or after training to support your bulking goals.",
+    "image": "/products/labrada-muscle-mass-gainer.jpg",
+    "variants": [
+      {
+        "id": "5-kg",
+        "label": "5 kg",
+        "price": 4500,
+        "mrp": 5399,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 27
+  },
+  {
+    "slug": "labrada-super-mass",
+    "name": "Labrada Super Mass Gainer",
+    "brand": "Labrada",
+    "category": "mass-gainer",
+    "description": "Labrada Super Mass Gainer by Labrada packs extra calories, carbohydrates and protein to help hard-gainers put on healthy weight and size. Take it between meals or after training to support your bulking goals.",
+    "image": "/products/labrada-super-mass.jpg",
+    "variants": [
+      {
+        "id": "3-kg",
+        "label": "3 kg",
+        "price": 2800,
+        "mrp": 3399,
+        "stock": 4
+      },
+      {
+        "id": "5-kg",
+        "label": "5 kg",
+        "price": 3500,
+        "mrp": 4199,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 28
+  },
+  {
+    "slug": "one-science-mass-gainer",
+    "name": "One Science Mass Gainer",
+    "brand": "One Science",
+    "category": "mass-gainer",
+    "description": "One Science Mass Gainer by One Science packs extra calories, carbohydrates and protein to help hard-gainers put on healthy weight and size. Take it between meals or after training to support your bulking goals.",
+    "image": "/products/one-science-mass-gainer.jpg",
+    "variants": [
+      {
+        "id": "5-kg",
+        "label": "5 kg",
+        "price": 4100,
+        "mrp": 4949,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 29
+  },
+  {
+    "slug": "c9-mass-gainer",
+    "name": "C9 Mass Gainer",
+    "brand": "Cloud 9",
+    "category": "mass-gainer",
+    "description": "C9 Mass Gainer by Cloud 9 packs extra calories, carbohydrates and protein to help hard-gainers put on healthy weight and size. Take it between meals or after training to support your bulking goals.",
+    "image": "/products/c9-mass-gainer.jpg",
+    "variants": [
+      {
+        "id": "1-kg",
+        "label": "1 kg",
+        "price": 800,
+        "mrp": 999,
+        "stock": 5
+      },
+      {
+        "id": "5-kg",
+        "label": "5 kg",
+        "price": 2400,
+        "mrp": 2899,
+        "stock": 4
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 30
+  },
+  {
+    "slug": "kevin-levrone-anabolic-mass",
+    "name": "Kevin Levrone Anabolic Mass",
+    "brand": "Kevin Levrone",
+    "category": "mass-gainer",
+    "description": "Kevin Levrone Anabolic Mass by Kevin Levrone packs extra calories, carbohydrates and protein to help hard-gainers put on healthy weight and size. Take it between meals or after training to support your bulking goals.",
+    "image": "/products/kevin-levrone-anabolic-mass.webp",
+    "variants": [
+      {
+        "id": "3-kg",
+        "label": "3 kg",
+        "price": 3400,
+        "mrp": 4099,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 31
+  },
+  {
+    "slug": "gibbon-mass-gainer",
+    "name": "Gibbon Mass Gainer",
+    "brand": "Gibbon",
+    "category": "mass-gainer",
+    "description": "Gibbon Mass Gainer by Gibbon packs extra calories, carbohydrates and protein to help hard-gainers put on healthy weight and size. Take it between meals or after training to support your bulking goals.",
+    "image": "/products/gibbon-mass-gainer.jpg",
+    "variants": [
+      {
+        "id": "1-kg",
+        "label": "1 kg",
+        "price": 800,
+        "mrp": 999,
+        "stock": 2
+      },
+      {
+        "id": "3-kg",
+        "label": "3 kg",
+        "price": 1800,
+        "mrp": 2199,
+        "stock": 2
+      },
+      {
+        "id": "5-kg",
+        "label": "5 kg",
+        "price": 2800,
+        "mrp": 3399,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 32
+  },
+  {
+    "slug": "cellucor-c4-original",
+    "name": "Cellucor C4 Original Pre-Workout",
+    "brand": "Cellucor",
+    "category": "pre-workout",
+    "description": "Cellucor C4 Original Pre-Workout by Cellucor is a pre-workout formula for energy, focus and pump. Take it 20–30 minutes before training to push harder, lift heavier and go longer.",
+    "image": "/products/cellucor-c4-original.jpg",
+    "variants": [
+      {
+        "id": "indian-version",
+        "label": "Indian version",
+        "price": 2100,
+        "mrp": 2549,
+        "stock": 2
+      },
+      {
+        "id": "50-servings",
+        "label": "50 servings",
+        "price": 3100,
+        "mrp": 3749,
+        "stock": 2
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 33
+  },
+  {
+    "slug": "prosupps-hyde-xtreme",
+    "name": "ProSupps Hyde Xtreme Pre-Workout",
+    "brand": "ProSupps",
+    "category": "pre-workout",
+    "description": "ProSupps Hyde Xtreme Pre-Workout by ProSupps is a pre-workout formula for energy, focus and pump. Take it 20–30 minutes before training to push harder, lift heavier and go longer.",
+    "image": "/products/prosupps-hyde-xtreme.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 1500,
+        "mrp": 1799,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 34
+  },
+  {
+    "slug": "muscle-wrath-pre-workout",
+    "name": "MuscleBlaze WrathX Pre-Workout",
+    "brand": "MuscleBlaze",
+    "category": "pre-workout",
+    "description": "MuscleBlaze WrathX Pre-Workout by MuscleBlaze is a pre-workout formula for energy, focus and pump. Take it 20–30 minutes before training to push harder, lift heavier and go longer.",
+    "image": "/products/muscle-wrath-pre-workout.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 1000,
+        "mrp": 1199,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 35
+  },
+  {
+    "slug": "kevin-levrone-shaaboom-pump",
+    "name": "Kevin Levrone Shaaboom Pump",
+    "brand": "Kevin Levrone",
+    "category": "pre-workout",
+    "description": "Kevin Levrone Shaaboom Pump by Kevin Levrone is a pre-workout formula for energy, focus and pump. Take it 20–30 minutes before training to push harder, lift heavier and go longer.",
+    "image": "/products/kevin-levrone-shaaboom-pump.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 1600,
+        "mrp": 1949,
+        "stock": 2
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 36
+  },
+  {
+    "slug": "muscletech-eaa",
+    "name": "MuscleTech EAA",
+    "brand": "MuscleTech",
+    "category": "amino-acids",
+    "description": "MuscleTech EAA by MuscleTech delivers essential amino acids that support muscle recovery and reduce soreness. Sip before, during or after your workout.",
+    "image": "/products/muscletech-eaa.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 1300,
+        "mrp": 1599,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 37
+  },
+  {
+    "slug": "scivation-xtend-bcaa",
+    "name": "Scivation Xtend BCAA",
+    "brand": "Scivation",
+    "category": "amino-acids",
+    "description": "Scivation Xtend BCAA by Scivation delivers essential amino acids that support muscle recovery and reduce soreness. Sip before, during or after your workout.",
+    "image": "/products/scivation-xtend-bcaa.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 2000,
+        "mrp": 2399,
+        "stock": 2
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 38
+  },
+  {
+    "slug": "maxn-bcaa",
+    "name": "MAXN BCAA",
+    "brand": "MAXN",
+    "category": "amino-acids",
+    "description": "MAXN BCAA by MAXN delivers essential amino acids that support muscle recovery and reduce soreness. Sip before, during or after your workout.",
+    "image": "/products/maxn-bcaa.png",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 950,
+        "mrp": 1149,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 39
+  },
+  {
+    "slug": "labrada-eaa",
+    "name": "Labrada EAA",
+    "brand": "Labrada",
+    "category": "amino-acids",
+    "description": "Labrada EAA by Labrada delivers essential amino acids that support muscle recovery and reduce soreness. Sip before, during or after your workout.",
+    "image": "/products/labrada-eaa.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 1400,
+        "mrp": 1699,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 40
+  },
+  {
+    "slug": "c9-bcaa",
+    "name": "C9 BCAA",
+    "brand": "Cloud 9",
+    "category": "amino-acids",
+    "description": "C9 BCAA by Cloud 9 delivers essential amino acids that support muscle recovery and reduce soreness. Sip before, during or after your workout.",
+    "image": "/products/c9-bcaa.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 1000,
+        "mrp": 1199,
+        "stock": 4
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 41
+  },
+  {
+    "slug": "gibbon-focus-bcaa",
+    "name": "Gibbon Focus BCAA",
+    "brand": "Gibbon",
+    "category": "amino-acids",
+    "description": "Gibbon Focus BCAA by Gibbon delivers essential amino acids that support muscle recovery and reduce soreness. Sip before, during or after your workout.",
+    "image": "/products/gibbon-focus-bcaa.png",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 850,
+        "mrp": 1049,
+        "stock": 4
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 42
+  },
+  {
+    "slug": "maxn-glutamine",
+    "name": "MAXN Glutamine",
+    "brand": "MAXN",
+    "category": "glutamine",
+    "description": "MAXN Glutamine by MAXN supports faster muscle recovery and immune health, especially during intense training phases.",
+    "image": "/products/maxn-glutamine.png",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 900,
+        "mrp": 1099,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 43
+  },
+  {
+    "slug": "apex-glutamine",
+    "name": "Apex Glutamine",
+    "brand": "Apex",
+    "category": "glutamine",
+    "description": "Apex Glutamine by Apex supports faster muscle recovery and immune health, especially during intense training phases.",
+    "image": "/products/apex-glutamine.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 900,
+        "mrp": 1099,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 44
+  },
+  {
+    "slug": "prosupps-glutamine",
+    "name": "ProSupps Glutamine",
+    "brand": "ProSupps",
+    "category": "glutamine",
+    "description": "ProSupps Glutamine by ProSupps supports faster muscle recovery and immune health, especially during intense training phases.",
+    "image": "/products/prosupps-glutamine.png",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 900,
+        "mrp": 1099,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 45
+  },
+  {
+    "slug": "kevin-levrone-glutamine",
+    "name": "Kevin Levrone Glutamine",
+    "brand": "Kevin Levrone",
+    "category": "glutamine",
+    "description": "Kevin Levrone Glutamine by Kevin Levrone supports faster muscle recovery and immune health, especially during intense training phases.",
+    "image": "/products/kevin-levrone-glutamine.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 850,
+        "mrp": 1049,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 46
+  },
+  {
+    "slug": "gibbon-glutamine",
+    "name": "Gibbon Glutamine",
+    "brand": "Gibbon",
+    "category": "glutamine",
+    "description": "Gibbon Glutamine by Gibbon supports faster muscle recovery and immune health, especially during intense training phases.",
+    "image": "/products/gibbon-glutamine.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 700,
+        "mrp": 849,
+        "stock": 5
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 47
+  },
+  {
+    "slug": "cloma-black-spider",
+    "name": "Cloma Pharma Black Spider",
+    "brand": "Cloma Pharma",
+    "category": "fat-burners",
+    "description": "Cloma Pharma Black Spider by Cloma Pharma supports fat metabolism and energy as part of a disciplined diet and training plan. Follow the label directions and do not exceed the recommended dose.",
+    "image": "/products/cloma-black-spider.webp",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 1700,
+        "mrp": 2049,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 48
+  },
+  {
+    "slug": "cloma-methyldrene",
+    "name": "Cloma Pharma Methyldrene",
+    "brand": "Cloma Pharma",
+    "category": "fat-burners",
+    "description": "Cloma Pharma Methyldrene by Cloma Pharma supports fat metabolism and energy as part of a disciplined diet and training plan. Follow the label directions and do not exceed the recommended dose.",
+    "image": "/products/cloma-methyldrene.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 1750,
+        "mrp": 2099,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 49
+  },
+  {
+    "slug": "nutrex-lipo-6",
+    "name": "Nutrex Lipo 6",
+    "brand": "Nutrex",
+    "category": "fat-burners",
+    "description": "Nutrex Lipo 6 by Nutrex supports fat metabolism and energy as part of a disciplined diet and training plan. Follow the label directions and do not exceed the recommended dose.",
+    "image": "/products/nutrex-lipo-6.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 1400,
+        "mrp": 1699,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 50
+  },
+  {
+    "slug": "muscletech-hydroxycut",
+    "name": "MuscleTech Hydroxycut",
+    "brand": "MuscleTech",
+    "category": "fat-burners",
+    "description": "MuscleTech Hydroxycut by MuscleTech supports fat metabolism and energy as part of a disciplined diet and training plan. Follow the label directions and do not exceed the recommended dose.",
+    "image": "/products/muscletech-hydroxycut.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 1350,
+        "mrp": 1649,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 51
+  },
+  {
+    "slug": "l-carnitine-indian",
+    "name": "L-Carnitine (Indian Version)",
+    "brand": "Assorted",
+    "category": "fat-burners",
+    "description": "L-Carnitine (Indian Version) by Assorted supports fat metabolism and energy as part of a disciplined diet and training plan. Follow the label directions and do not exceed the recommended dose.",
+    "image": "/products/l-carnitine-indian.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 1400,
+        "mrp": 1699,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 52
+  },
+  {
+    "slug": "labrada-l-carnitine",
+    "name": "Labrada L-Carnitine",
+    "brand": "Labrada",
+    "category": "fat-burners",
+    "description": "Labrada L-Carnitine by Labrada supports fat metabolism and energy as part of a disciplined diet and training plan. Follow the label directions and do not exceed the recommended dose.",
+    "image": "/products/labrada-l-carnitine.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 1100,
+        "mrp": 1349,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 53
+  },
+  {
+    "slug": "maxn-omega-3",
+    "name": "MAXN Omega-3 Fish Oil",
+    "brand": "MAXN",
+    "category": "omega-3",
+    "description": "MAXN Omega-3 Fish Oil by MAXN provides omega-3 fatty acids (EPA & DHA) that support heart, brain and joint health — a daily essential for active people.",
+    "image": "/products/maxn-omega-3.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 350,
+        "mrp": 449,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 54
+  },
+  {
+    "slug": "carbamide-forte-fish-oil",
+    "name": "Carbamide Forte Fish Oil",
+    "brand": "Carbamide Forte",
+    "category": "omega-3",
+    "description": "Carbamide Forte Fish Oil by Carbamide Forte provides omega-3 fatty acids (EPA & DHA) that support heart, brain and joint health — a daily essential for active people.",
+    "image": "/products/carbamide-forte-fish-oil.jpg",
+    "variants": [
+      {
+        "id": "90-tablets",
+        "label": "90 tablets",
+        "price": 700,
+        "mrp": 849,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 55
+  },
+  {
+    "slug": "youwefit-fish-oil",
+    "name": "YouWeFit Fish Oil",
+    "brand": "YouWeFit",
+    "category": "omega-3",
+    "description": "YouWeFit Fish Oil by YouWeFit provides omega-3 fatty acids (EPA & DHA) that support heart, brain and joint health — a daily essential for active people.",
+    "image": "/products/youwefit-fish-oil.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 400,
+        "mrp": 499,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 56
+  },
+  {
+    "slug": "muscleblaze-fish-oil",
+    "name": "MuscleBlaze Fish Oil",
+    "brand": "MuscleBlaze",
+    "category": "omega-3",
+    "description": "MuscleBlaze Fish Oil by MuscleBlaze provides omega-3 fatty acids (EPA & DHA) that support heart, brain and joint health — a daily essential for active people.",
+    "image": "/products/muscleblaze-fish-oil.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 500,
+        "mrp": 599,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 57
+  },
+  {
+    "slug": "c9-fish-oil",
+    "name": "C9 Fish Oil",
+    "brand": "Cloud 9",
+    "category": "omega-3",
+    "description": "C9 Fish Oil by Cloud 9 provides omega-3 fatty acids (EPA & DHA) that support heart, brain and joint health — a daily essential for active people.",
+    "image": "/products/c9-fish-oil.jpg",
+    "variants": [
+      {
+        "id": "60-softgels",
+        "label": "60 softgels",
+        "price": 500,
+        "mrp": 599,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 58
+  },
+  {
+    "slug": "labrada-multivitamin",
+    "name": "Labrada Multivitamin",
+    "brand": "Labrada",
+    "category": "vitamins",
+    "description": "Labrada Multivitamin by Labrada fills nutritional gaps with essential vitamins and minerals to support daily energy, immunity and overall wellness.",
+    "image": "/products/labrada-multivitamin.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 600,
+        "mrp": 749,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 59
+  },
+  {
+    "slug": "gnc-multivitamin",
+    "name": "GNC Multivitamin",
+    "brand": "GNC",
+    "category": "vitamins",
+    "description": "GNC Multivitamin by GNC fills nutritional gaps with essential vitamins and minerals to support daily energy, immunity and overall wellness.",
+    "image": "/products/gnc-multivitamin.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 600,
+        "mrp": 749,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 60
+  },
+  {
+    "slug": "carbamide-forte-multivitamin",
+    "name": "Carbamide Forte Multivitamin",
+    "brand": "Carbamide Forte",
+    "category": "vitamins",
+    "description": "Carbamide Forte Multivitamin by Carbamide Forte fills nutritional gaps with essential vitamins and minerals to support daily energy, immunity and overall wellness.",
+    "image": "/products/carbamide-forte-multivitamin.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 500,
+        "mrp": 599,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 61
+  },
+  {
+    "slug": "on-opti-men",
+    "name": "ON Opti-Men Multivitamin",
+    "brand": "Optimum Nutrition",
+    "category": "vitamins",
+    "description": "ON Opti-Men Multivitamin by Optimum Nutrition fills nutritional gaps with essential vitamins and minerals to support daily energy, immunity and overall wellness.",
+    "image": "/products/on-opti-men.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 500,
+        "mrp": 599,
+        "stock": 1
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 62
+  },
+  {
+    "slug": "c9-multivitamin",
+    "name": "C9 Multivitamin",
+    "brand": "Cloud 9",
+    "category": "vitamins",
+    "description": "C9 Multivitamin by Cloud 9 fills nutritional gaps with essential vitamins and minerals to support daily energy, immunity and overall wellness.",
+    "image": "",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 450,
+        "mrp": 549,
+        "stock": 6
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 63
+  },
+  {
+    "slug": "maxn-zma",
+    "name": "MAXN ZMA",
+    "brand": "MAXN",
+    "category": "vitamins",
+    "description": "Zinc, magnesium and vitamin B6 — take at night before sleep to support recovery. MAXN ZMA by MAXN fills nutritional gaps with essential vitamins and minerals to support daily energy, immunity and overall wellness.",
+    "image": "/products/maxn-zma.png",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 750,
+        "mrp": 899,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 64
+  },
+  {
+    "slug": "carbamide-forte-zma",
+    "name": "Carbamide Forte ZMA",
+    "brand": "Carbamide Forte",
+    "category": "vitamins",
+    "description": "Zinc, magnesium and vitamin B6 — take at night before sleep to support recovery. Carbamide Forte ZMA by Carbamide Forte fills nutritional gaps with essential vitamins and minerals to support daily energy, immunity and overall wellness.",
+    "image": "/products/carbamide-forte-zma.jpg",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 500,
+        "mrp": 599,
+        "stock": 1
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 65
+  },
+  {
+    "slug": "c9-zma",
+    "name": "C9 ZMA",
+    "brand": "Cloud 9",
+    "category": "vitamins",
+    "description": "Zinc, magnesium and vitamin B6 — take at night before sleep to support recovery. C9 ZMA by Cloud 9 fills nutritional gaps with essential vitamins and minerals to support daily energy, immunity and overall wellness.",
+    "image": "",
+    "variants": [
+      {
+        "id": "1-bottle",
+        "label": "1 bottle",
+        "price": 450,
+        "mrp": 549,
+        "stock": 4
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 66
+  },
+  {
+    "slug": "wellcore-creatine",
+    "name": "Wellcore Micronised Creatine",
+    "brand": "Wellcore",
+    "category": "creatine",
+    "description": "Wellcore Micronised Creatine by Wellcore is one of the most researched supplements for strength and power. A daily 3–5 g dose helps increase strength, power output and muscle volume.",
+    "image": "/products/wellcore-creatine.jpg",
+    "variants": [
+      {
+        "id": "100-g",
+        "label": "100 g",
+        "price": 450,
+        "mrp": 549,
+        "stock": 4
+      },
+      {
+        "id": "250-g",
+        "label": "250 g",
+        "price": 770,
+        "mrp": 949,
+        "stock": 4
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 67
+  },
+  {
+    "slug": "muscleblaze-creatine",
+    "name": "MuscleBlaze Creatine Monohydrate",
+    "brand": "MuscleBlaze",
+    "category": "creatine",
+    "description": "MuscleBlaze Creatine Monohydrate by MuscleBlaze is one of the most researched supplements for strength and power. A daily 3–5 g dose helps increase strength, power output and muscle volume.",
+    "image": "/products/muscleblaze-creatine.jpg",
+    "variants": [
+      {
+        "id": "unflavoured",
+        "label": "Unflavoured",
+        "price": 750,
+        "mrp": 899,
+        "stock": 4
+      }
+    ],
+    "featured": true,
+    "active": true,
+    "sort": 68
+  },
+  {
+    "slug": "c9-creatine",
+    "name": "C9 Creatine Monohydrate",
+    "brand": "Cloud 9",
+    "category": "creatine",
+    "description": "C9 Creatine Monohydrate by Cloud 9 is one of the most researched supplements for strength and power. A daily 3–5 g dose helps increase strength, power output and muscle volume.",
+    "image": "/products/c9-creatine.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 450,
+        "mrp": 549,
+        "stock": 6
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 69
+  },
+  {
+    "slug": "kevin-levrone-creatine",
+    "name": "Kevin Levrone Creatine",
+    "brand": "Kevin Levrone",
+    "category": "creatine",
+    "description": "Kevin Levrone Creatine by Kevin Levrone is one of the most researched supplements for strength and power. A daily 3–5 g dose helps increase strength, power output and muscle volume.",
+    "image": "/products/kevin-levrone-creatine.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 750,
+        "mrp": 899,
+        "stock": 2
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 70
+  },
+  {
+    "slug": "gibbon-creatine",
+    "name": "Gibbon Creatine",
+    "brand": "Gibbon",
+    "category": "creatine",
+    "description": "Gibbon Creatine by Gibbon is one of the most researched supplements for strength and power. A daily 3–5 g dose helps increase strength, power output and muscle volume.",
+    "image": "/products/gibbon-creatine.jpg",
+    "variants": [
+      {
+        "id": "1-tub",
+        "label": "1 tub",
+        "price": 550,
+        "mrp": 699,
+        "stock": 5
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 71
+  },
+  {
+    "slug": "alpino-high-protein-muesli",
+    "name": "Alpino High Protein Muesli",
+    "brand": "Alpino",
+    "category": "healthy-food",
+    "description": "Alpino High Protein Muesli by Alpino — a tasty, protein-rich everyday food that makes clean eating easy for fitness lovers.",
+    "image": "/products/alpino-high-protein-muesli.jpg",
+    "variants": [
+      {
+        "id": "400-g",
+        "label": "400 g",
+        "price": 250,
+        "mrp": 299,
+        "stock": 12
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 72
+  },
+  {
+    "slug": "super-protein-bar",
+    "name": "Super Protein Bar",
+    "brand": "Super Bar",
+    "category": "healthy-food",
+    "description": "Super Protein Bar by Super Bar — a tasty, protein-rich everyday food that makes clean eating easy for fitness lovers.",
+    "image": "/products/super-protein-bar.jpg",
+    "variants": [
+      {
+        "id": "1-bar",
+        "label": "1 bar",
+        "price": 59,
+        "mrp": 71,
+        "stock": 120
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 73
+  },
+  {
+    "slug": "alpino-super-oats",
+    "name": "Alpino Super Oats",
+    "brand": "Alpino",
+    "category": "healthy-food",
+    "description": "Alpino Super Oats by Alpino — a tasty, protein-rich everyday food that makes clean eating easy for fitness lovers.",
+    "image": "/products/alpino-super-oats.jpg",
+    "variants": [
+      {
+        "id": "1-kg",
+        "label": "1 kg",
+        "price": 420,
+        "mrp": 549,
+        "stock": 12
+      },
+      {
+        "id": "2-5-kg",
+        "label": "2.5 kg",
+        "price": 950,
+        "mrp": 1149,
+        "stock": 8
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 74
+  },
+  {
+    "slug": "alpino-peanut-butter",
+    "name": "Alpino High Protein Peanut Butter",
+    "brand": "Alpino",
+    "category": "healthy-food",
+    "description": "Alpino High Protein Peanut Butter by Alpino — a tasty, protein-rich everyday food that makes clean eating easy for fitness lovers.",
+    "image": "/products/alpino-peanut-butter.jpg",
+    "variants": [
+      {
+        "id": "1-jar",
+        "label": "1 jar",
+        "price": 500,
+        "mrp": 599,
+        "stock": 12
+      }
+    ],
+    "featured": false,
+    "active": true,
+    "sort": 75
+  }
+]

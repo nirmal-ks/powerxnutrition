@@ -1,0 +1,27 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.env
+.env.local
+.env*.local
+.vercel
+npm-debug.log*
+
+# Orders placed while running on the local JSON store (customer data — keep private)
+data/orders.json
+
+# Old static site contains passwords in its README — never publish it
+old-static-site/
+
+# Local database (PGlite), uploaded photos and PRIVATE supplier invoices / receipts — never commit
+data/db/
+data/uploads/
+data/private/
+data/catalog-snapshot.json
+
+# Design drafts in the project root (not used by the site) — kept locally, not committed
+/ChatGPT Image*.png
+/953045dbef9967072279573c3f0ee390.png
+/file_0000000079448211b6ebb06a3f7b667b.jpg

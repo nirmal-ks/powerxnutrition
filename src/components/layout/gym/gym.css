@@ -1,0 +1,137 @@
+/* Side-gutter gym buddies (SideGym.tsx). Class prefix: gb- */
+
+.gb-gym svg * { transform-box: view-box; }
+.gb-bubble::after {
+  content: ""; position: absolute; left: 50%; bottom: -6px; width: 10px; height: 10px;
+  background: inherit; border-right: inherit; border-bottom: inherit; transform: translateX(-50%) rotate(45deg);
+}
+
+/* shared */
+.gb-blink { animation: gb-blink 4s infinite; }
+.gb-twinkle { animation: gb-twinkle 0.6s ease-in-out infinite alternate; }
+.gb-strain { opacity: 0; }
+@keyframes gb-blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+@keyframes gb-twinkle { from { opacity: 0.4; } to { opacity: 1; } }
+@keyframes gb-hop { 50% { transform: translateY(-8px); } }
+@keyframes gb-sweat { 0%, 45% { opacity: 0; transform: translateY(0); } 55% { opacity: 1; } 100% { opacity: 0; transform: translateY(26px); } }
+
+/* Home — curls */
+.gb-curl .gb-curl-l { animation: gb-curl-l 1.6s ease-in-out infinite; }
+.gb-curl .gb-curl-r { animation: gb-curl-r 1.6s ease-in-out -0.8s infinite; }
+.gb-curl .gb-bicep { animation: gb-bicep 1.6s ease-in-out infinite; }
+.gb-curl .gb-bicep.gb-late { animation-delay: -0.8s; }
+.gb-curl.is-flex { animation: gb-hop 0.45s ease 2; }
+.gb-curl.is-flex .gb-curl-l { animation: none; transform: rotate(-160deg); transition: transform 0.25s; }
+.gb-curl.is-flex .gb-curl-r { animation: none; transform: rotate(160deg); transition: transform 0.25s; }
+.gb-curl.is-flex .gb-bicep { animation: none; transform: scale(1.6); transition: transform 0.25s; }
+@keyframes gb-curl-l { 0%, 12% { transform: rotate(0); } 48%, 60% { transform: rotate(-145deg); } 100% { transform: rotate(0); } }
+@keyframes gb-curl-r { 0%, 12% { transform: rotate(0); } 48%, 60% { transform: rotate(145deg); } 100% { transform: rotate(0); } }
+@keyframes gb-bicep { 0%, 12% { transform: scale(1); } 48%, 60% { transform: scale(1.35); } 100% { transform: scale(1); } }
+
+/* Home — squats */
+.gb-squat .gb-squat-legs { animation: gb-squat-legs 2.2s ease-in-out infinite; }
+.gb-squat .gb-squat-upper { animation: gb-squat-upper 2.2s ease-in-out infinite; }
+.gb-squat .gb-strain { animation: gb-strain 2.2s ease-in-out infinite; }
+.gb-squat .gb-sweat { animation: gb-sweat 2.2s ease-in infinite; }
+@keyframes gb-squat-legs { 0%, 10% { transform: scale(1, 1); } 50%, 60% { transform: scale(1.18, 0.72); } 100% { transform: scale(1, 1); } }
+@keyframes gb-squat-upper { 0%, 10% { transform: translateY(0); } 50%, 60% { transform: translateY(21px); } 100% { transform: translateY(0); } }
+@keyframes gb-strain { 0%, 25% { opacity: 0; } 50%, 60% { opacity: 0.85; } 85%, 100% { opacity: 0; } }
+
+/* Shop — protein shaker */
+.gb-shaker .gb-shake { animation: gb-shake 0.6s ease-in-out infinite alternate; }
+.gb-shaker.is-turbo .gb-shake { animation-duration: 0.14s; }
+.gb-shaker .gb-liquid { animation: gb-wave 1.1s linear infinite; }
+.gb-shaker.is-turbo .gb-liquid { animation-duration: 0.3s; }
+.gb-shaker .gb-scoop { animation: gb-scoop 3s ease-in-out infinite; }
+.gb-shaker .gb-powder { opacity: 0; animation: gb-powder 3s ease-in infinite; }
+@keyframes gb-shake { from { transform: rotate(-9deg); } to { transform: rotate(9deg); } }
+@keyframes gb-wave { from { transform: translateX(0); } to { transform: translateX(-40px); } }
+@keyframes gb-scoop { 0%, 20%, 80%, 100% { transform: rotate(0); } 35%, 65% { transform: rotate(28deg); } }
+@keyframes gb-powder {
+  0%, 35% { opacity: 0; transform: translate(0, 0); }
+  40% { opacity: 1; }
+  60% { opacity: 0; transform: translate(24px, 18px); }
+  100% { opacity: 0; transform: translate(24px, 18px); }
+}
+
+/* Shop — treadmill */
+.gb-run .gb-belt { animation: gb-belt calc(var(--gb-spd) / 2) linear infinite; }
+.gb-run .gb-swing { animation: gb-leg var(--gb-spd) ease-in-out infinite; }
+.gb-run .gb-reverse { animation-name: gb-arm; }
+.gb-run .gb-late { animation-delay: calc(var(--gb-spd) / -2); }
+.gb-run .gb-bob { animation: gb-bob calc(var(--gb-spd) / 2) ease-in-out infinite; }
+.gb-run .gb-sweat { animation: gb-sweat 1.6s ease-in infinite; }
+@keyframes gb-belt { from { stroke-dashoffset: 0; } to { stroke-dashoffset: 12; } }
+@keyframes gb-leg { 0%, 100% { transform: rotate(28deg); } 50% { transform: rotate(-28deg); } }
+@keyframes gb-arm { 0%, 100% { transform: rotate(-35deg); } 50% { transform: rotate(35deg); } }
+@keyframes gb-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+
+/* Product — bench press */
+.gb-bench .gb-press-arm { animation: gb-press-arm 2s ease-in-out infinite; }
+.gb-bench .gb-press-bar { animation: gb-press-bar 2s ease-in-out infinite; }
+.gb-bench .gb-strain { animation: gb-strain 2s ease-in-out infinite; }
+@keyframes gb-press-arm { 0%, 10% { transform: scaleY(1); } 45%, 55% { transform: scaleY(0.55); } 100% { transform: scaleY(1); } }
+@keyframes gb-press-bar { 0%, 10% { transform: translateY(0); } 45%, 55% { transform: translateY(15.3px); } 100% { transform: translateY(0); } }
+
+/* Product — jump rope */
+.gb-rope .gb-jump { animation: gb-jump var(--gb-spd) ease-in-out infinite; }
+.gb-rope .gb-rope-arc { animation: gb-rope-arc var(--gb-spd) linear infinite; }
+@keyframes gb-jump { 0%, 100% { transform: translateY(-14px); } 30%, 70% { transform: translateY(0); } }
+@keyframes gb-rope-arc { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(-0.78); } }
+
+/* Cart — pull-ups */
+.gb-pull .gb-pull-body { animation: gb-pull-body 2.2s ease-in-out infinite; }
+.gb-pull .gb-pull-arm { animation: gb-pull-arm 2.2s ease-in-out infinite; }
+@keyframes gb-pull-body { 0%, 10% { transform: translateY(0); } 45%, 60% { transform: translateY(-37.8px); } 100% { transform: translateY(0); } }
+@keyframes gb-pull-arm { 0%, 10% { transform: scaleY(1); } 45%, 60% { transform: scaleY(0.3); } 100% { transform: scaleY(1); } }
+
+/* Cart — kettlebell swing */
+.gb-kb .gb-kb-torso { animation: gb-kb-torso 1.6s ease-in-out infinite; }
+.gb-kb .gb-kb-arms { animation: gb-kb-arms 1.6s ease-in-out infinite; }
+@keyframes gb-kb-torso { 0%, 100% { transform: rotate(28deg); } 50% { transform: rotate(0); } }
+@keyframes gb-kb-arms { 0%, 100% { transform: rotate(18deg); } 50% { transform: rotate(-95deg); } }
+
+/* About — boxer */
+.gb-box .gb-punch { animation: gb-punch var(--gb-spd) ease-out infinite; }
+.gb-box .gb-bag { animation: gb-bag var(--gb-spd) ease-out infinite; }
+.gb-box .gb-pow { opacity: 0; animation: gb-pow var(--gb-spd) ease-out infinite; }
+@keyframes gb-punch { 0%, 30% { transform: translateX(0); } 40% { transform: translateX(20px); } 55%, 100% { transform: translateX(0); } }
+@keyframes gb-bag { 0%, 38% { transform: rotate(0); } 50% { transform: rotate(-11deg); } 68% { transform: rotate(5deg); } 84% { transform: rotate(-2deg); } 100% { transform: rotate(0); } }
+@keyframes gb-pow { 0%, 36% { opacity: 0; transform: scale(0.6); } 42% { opacity: 1; transform: scale(1.1); } 58%, 100% { opacity: 0; transform: scale(1); } }
+.gb-box .gb-pow { transform-origin: 96px 70px; }
+
+/* About — champion */
+.gb-champ .gb-champ-body { animation: gb-bob 1.4s ease-in-out infinite; }
+.gb-champ .gb-bicep { animation: gb-pulse 1.4s ease-in-out infinite; }
+.gb-champ .gb-confetti { opacity: 0; animation: gb-confetti 3s linear infinite; }
+.gb-champ.is-burst .gb-confetti { animation-duration: 1.2s; }
+@keyframes gb-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.35); } }
+@keyframes gb-confetti {
+  0% { opacity: 0; transform: translateY(0) rotate(0); }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(170px) rotate(540deg); }
+}
+
+/* Contact — push-ups */
+.gb-push .gb-push-body { animation: gb-push-body 1.4s ease-in-out infinite; }
+.gb-push .gb-push-arm { animation: gb-push-arm 1.4s ease-in-out infinite; }
+@keyframes gb-push-body { 0%, 10% { transform: rotate(0); } 45%, 55% { transform: rotate(-8deg); } 100% { transform: rotate(0); } }
+@keyframes gb-push-arm { 0%, 10% { transform: scaleY(1); } 45%, 55% { transform: scaleY(0.66); } 100% { transform: scaleY(1); } }
+
+/* Contact — battle ropes (ropes are drawn in JS) */
+.gb-ropes .gb-rope-arms { animation: gb-bob 0.28s ease-in-out infinite; }
+.gb-ropes.is-power .gb-rope-arms { animation-duration: 0.16s; }
+
+/* Policies — sleeping + meditation */
+.gb-sleep .gb-breathe { animation: gb-breathe 3s ease-in-out infinite; }
+.gb-sleep .gb-zzz { opacity: 0; animation: gb-zzz 2.7s ease-out infinite; }
+@keyframes gb-breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.1); } }
+@keyframes gb-zzz { 0% { opacity: 0; transform: translate(0, 0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(14px, -46px); } }
+.gb-zen .gb-float { animation: gb-float 3.2s ease-in-out infinite; }
+.gb-zen .gb-aura { animation: gb-aura 3.2s ease-in-out infinite; }
+.gb-zen.is-breath .gb-aura { animation-duration: 1.2s; }
+.gb-zen .gb-rise { opacity: 0; animation: gb-rise 3.2s ease-out infinite; }
+@keyframes gb-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes gb-aura { 0%, 100% { transform: scale(0.92); opacity: 0.1; } 50% { transform: scale(1.06); opacity: 0.22; } }
+@keyframes gb-rise { 0% { opacity: 0; transform: translateY(0); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateY(-120px); } }
