@@ -2,6 +2,7 @@ import "server-only";
 import path from "node:path";
 import { createPgliteDb, createPostgresDb, type Db } from "./adapter";
 import { migrations } from "./migrations";
+import { databaseUrl } from "@/lib/env";
 
 export type { Db, Queryable, Row } from "./adapter";
 export { newId, nextCounter, nextDocumentNo, financialYear } from "./ids";
@@ -15,7 +16,7 @@ export { newId, nextCounter, nextDocumentNo, financialYear } from "./ids";
 type DbGlobal = { __pxDb?: Promise<Db> };
 const g = globalThis as DbGlobal;
 
-export const dbKind = (): "postgres" | "pglite" => (process.env.DATABASE_URL ? "postgres" : "pglite");
+export const dbKind = (): "postgres" | "pglite" => (databaseUrl() ? "postgres" : "pglite");
 
 /** True while `next build` is prerendering. PGlite is single-process, so we don't open it then. */
 export const isBuildPhase = () => process.env.NEXT_PHASE === "phase-production-build";
@@ -23,7 +24,7 @@ export const isBuildPhase = () => process.env.NEXT_PHASE === "phase-production-b
 export function getDb(): Promise<Db> {
   if (!g.__pxDb) {
     g.__pxDb = (async () => {
-      const url = process.env.DATABASE_URL;
+      const url = databaseUrl();
       const db = url
         ? await createPostgresDb(url)
         : await createPgliteDb(process.env.PGLITE_DATA_DIR || path.join(process.cwd(), "data", "db"));

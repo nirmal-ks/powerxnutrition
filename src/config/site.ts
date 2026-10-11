@@ -15,7 +15,11 @@ export const siteConfig = {
   tagline: "Fuel Your Better Tomorrow",
   description:
     "PowerX Nutrition — 100% genuine whey protein, creatine, mass gainers, pre-workouts, vitamins and sports nutrition supplements at the best prices in Tamil Nadu. Cash on Delivery & UPI available.",
-  url: env(process.env.NEXT_PUBLIC_SITE_URL, "http://localhost:3000").replace(/\/$/, ""),
+  // On Vercel this falls back to the project's production domain when NEXT_PUBLIC_SITE_URL isn't set.
+  url: env(
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000",
+  ).replace(/\/$/, ""),
   locale: "en_IN",
   keywords: [
     "whey protein",

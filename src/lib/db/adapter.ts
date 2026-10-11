@@ -76,11 +76,16 @@ export async function createPgliteDb(dataDir?: string): Promise<Db> {
 export async function createPostgresDb(connectionString: string): Promise<Db> {
   const { default: pg } = await import("pg");
   for (const [oid, fn] of Object.entries(parsers)) pg.types.setTypeParser(Number(oid), fn);
+  // Supabase / most hosted Postgres require TLS; local postgres usually doesn't. Recent `pg` versions
+  // treat "sslmode=require" in the URL as full certificate verification, which fails against
+  // Supabase's pooler — so the sslmode parameter is removed and TLS is configured here instead.
+  const local = /localhost|127\.0\.0\.1/.test(connectionString) || /sslmode=disable/.test(connectionString);
+  const url = new URL(connectionString);
+  url.searchParams.delete("sslmode");
   const pool = new pg.Pool({
-    connectionString,
+    connectionString: url.toString(),
     max: Number(process.env.DATABASE_POOL_MAX) || 5,
-    // Supabase / most hosted Postgres require TLS; local postgres usually doesn't.
-    ssl: /localhost|127\.0\.0\.1/.test(connectionString) || /sslmode=disable/.test(connectionString) ? undefined : { rejectUnauthorized: false },
+    ssl: local ? undefined : { rejectUnauthorized: false },
   });
   return {
     kind: "postgres",

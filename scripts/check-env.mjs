@@ -37,6 +37,20 @@ if (!process.env.VERCEL) {
 }
 
 const env = (k) => (process.env[k] ?? "").trim();
+// Vercel's Supabase integration names variables POSTGRES_URL / SUPABASE_URL …, optionally with a
+// custom prefix (e.g. PowerXnutrition_POSTGRES_URL). Same rules as src/lib/env.ts.
+const bySuffix = (suffix) => {
+  for (const [k, v] of Object.entries(process.env)) if (v && k.endsWith(suffix) && !k.startsWith("NEXT_PUBLIC_")) return { k, v: v.trim() };
+  return null;
+};
+const pick = (names, suffixes) => {
+  for (const n of names) if (env(n)) return { k: n, v: env(n) };
+  for (const s of suffixes) {
+    const h = bySuffix(s);
+    if (h) return h;
+  }
+  return { k: names[0], v: "" };
+};
 const errors = [];
 const warnings = [];
 const ok = [];
@@ -66,14 +80,17 @@ for (const k of Object.keys(process.env)) {
 }
 
 // ---------------------------------------------------------------- site URL
-const site = env("NEXT_PUBLIC_SITE_URL");
+const vercelDomain = env("VERCEL_PROJECT_PRODUCTION_URL") || env("NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL");
+const site = env("NEXT_PUBLIC_SITE_URL") || (process.env.VERCEL && vercelDomain ? `https://${vercelDomain}` : "");
 if (!site) (onVercel ? err : warn)("NEXT_PUBLIC_SITE_URL", "missing — receipt & WhatsApp PDF links need your public address");
 else if (onVercel && (/localhost|127\.0\.0\.1|192\.168\./.test(site) || !site.startsWith("https://"))) {
   err("NEXT_PUBLIC_SITE_URL", `"${site}" — on Vercel use your public https address (e.g. https://powerxnutrition.in or https://<project>.vercel.app)`);
 } else good("NEXT_PUBLIC_SITE_URL", site);
 
 // ---------------------------------------------------------------- database
-const dbUrl = env("DATABASE_URL");
+const dbPick = pick(["DATABASE_URL", "POSTGRES_URL"], ["_POSTGRES_URL"]);
+const dbUrl = dbPick.v;
+if (dbUrl && dbPick.k !== "DATABASE_URL") good("DATABASE_URL", `taken from ${dbPick.k} (Vercel Supabase integration)`);
 let dbInfo = null;
 if (!dbUrl) {
   if (onVercel) err("DATABASE_URL", "missing — Vercel has no permanent disk, so bills/stock would not be saved. Use Supabase → Project Settings → Database → Connection string → Transaction pooler");
@@ -98,8 +115,12 @@ if (!dbUrl) {
 }
 
 // ---------------------------------------------------------------- Supabase storage
-const sUrl = env("SUPABASE_URL").replace(/\/$/, "");
-const sKey = env("SUPABASE_SERVICE_ROLE_KEY");
+const sUrlPick = pick(["SUPABASE_URL"], ["_SUPABASE_URL"]);
+const sKeyPick = pick(["SUPABASE_SERVICE_ROLE_KEY", "SUPABASE_SECRET_KEY"], ["_SUPABASE_SERVICE_ROLE_KEY", "_SUPABASE_SECRET_KEY"]);
+const sUrl = sUrlPick.v.replace(/\/$/, "");
+const sKey = sKeyPick.v;
+if (sUrl && sUrlPick.k !== "SUPABASE_URL") good("SUPABASE_URL", `taken from ${sUrlPick.k}`);
+if (sKey && sKeyPick.k !== "SUPABASE_SERVICE_ROLE_KEY") good("SUPABASE_SERVICE_ROLE_KEY", `taken from ${sKeyPick.k}`);
 let storageOk = false;
 if (!sUrl && !sKey) {
   if (onVercel) err("SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY", "missing — Vercel can't store product photos or supplier invoices on disk. Supabase → Project Settings → API");
@@ -162,12 +183,16 @@ async function liveChecks() {
     try {
       const { default: pg } = await import("pg");
       const client = new pg.Client({
-        connectionString: dbUrl,
+        connectionString: (() => {
+          const u = new URL(dbUrl);
+          u.searchParams.delete("sslmode"); // same as the app: TLS configured below
+          return u.toString();
+        })(),
         ssl: /localhost|127\.0\.0\.1|sslmode=disable/.test(dbUrl) ? undefined : { rejectUnauthorized: false },
         connectionTimeoutMillis: 10000,
       });
       await client.connect();
-      const r = await client.query("select version() as v, (select count(*) from information_schema.tables where table_name = 'schema_migrations')::int as m");
+      const r = await client.query("select version() as v, (select count(*) from information_schema.tables where table_schema = 'public' and table_name = 'products')::int as m");
       await client.end();
       good("Database connection", `${String(r.rows[0].v).split(" ").slice(0, 2).join(" ")}${r.rows[0].m ? " · tables already created" : " · empty (tables are created on first start)"}`);
     } catch (e) {

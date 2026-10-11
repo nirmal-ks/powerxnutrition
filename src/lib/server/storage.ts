@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { AppError } from "./errors";
+import { supabaseServiceKey, supabaseUrl } from "@/lib/env";
 
 /**
  * File storage with two backends:
@@ -11,8 +12,8 @@ import { AppError } from "./errors";
  *  - Local disk otherwise: data/uploads (served by /uploads/[name]) and data/private (staff-only route).
  * Supplier invoices and expense receipts are never placed anywhere public.
  */
-const SUPABASE_URL = () => process.env.SUPABASE_URL?.replace(/\/$/, "");
-const SUPABASE_KEY = () => process.env.SUPABASE_SERVICE_ROLE_KEY;
+const SUPABASE_URL = () => supabaseUrl();
+const SUPABASE_KEY = () => supabaseServiceKey();
 const PUBLIC_BUCKET = "product-images";
 const PRIVATE_BUCKET = "private-files";
 
