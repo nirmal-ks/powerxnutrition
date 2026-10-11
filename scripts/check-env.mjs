@@ -212,6 +212,6 @@ for (const l of errors) console.log(l);
 console.log("");
 if (errors.length) {
   console.log(`✖ ${errors.length} problem(s) — fix them${process.env.VERCEL ? " in Vercel → Project → Settings → Environment Variables, then redeploy" : ""}. See README → Deployment.\n`);
-  process.exit(1);
+  process.exitCode = 1;
 }
 console.log(`✔ All good${warnings.length ? ` (${warnings.length} warning(s))` : ""}.\n`);

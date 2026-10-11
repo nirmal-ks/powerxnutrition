@@ -25,3 +25,8 @@ data/catalog-snapshot.json
 /ChatGPT Image*.png
 /953045dbef9967072279573c3f0ee390.png
 /file_0000000079448211b6ebb06a3f7b667b.jpg
+
+# Screenshots saved in the project folder — never commit
+/image*.png
+/{*}.png
+/Screenshot*.png
